@@ -3,9 +3,7 @@
 # contact: don.tuggener@gmail.com                         #
 ###########################################################
 
-Web: http://www.cl.uzh.ch/de/research/completed-research/coreferenceresolution.html
-
-This is the implementation of the incremental coreference resolution system for German described in: 
+This is the implementation of the incremental coreference resolution system described in: 
 Tuggener, Don (2016). Incremental coreference resolution for German. PhD Thesis, University of Zürich.
 
 The input for the coreference system is a dependency parsed German document in the CoNLL format (see examples/example_input.txt and examples/example_input.txt.parzu).
@@ -59,7 +57,7 @@ We store the markables in a file for inspection purposes, i.e. error analysis.
 python corzu.py examples/example_input.txt.mables examples/example_input.txt.parzu examples/example_input.txt.coref
 The first argument needs to be the extracted markables file from step 2. 
 The second argument is the parzu output file from step 1. It will be used to create the CoNLL format output file containing the coreference annotation.
-The third argument is the output file, i.e. the conll file where the coreference information is added as the last column.
+CorZu writes to standard out, and we redirect it to examples/example_input.txt.coref
 
 4. Optionally: Convert the conll formated output to more reader-friendly HTML, i.e.:
 python conll_to_html.py examples/example_input.txt.coref > examples/example_input.txt.html
